@@ -29,10 +29,10 @@ colnames(FinalData) <- c("SUBJECT", "ACTIVITY", Features[FeatureIndex])
 ActivityLabels <- read.table("./data/ProjectFiles/UCI HAR Dataset/activity_labels.txt")
 FinalData$ACTIVITY <- factor(FinalData$ACTIVITY, levels = ActivityLabels[,1], labels = ActivityLabels[,2])
 
-#Labels the data set with descriptive variable names.
+## Labels the data set with descriptive variable names.
 names(FinalData) <- gsub("\\()", "", names(FinalData))
 names(FinalData) <- gsub("^t", "time", names(FinalData))
-names(FinalData) <- gsub("^f", "frequence", names(FinalData))
+names(FinalData) <- gsub("^f", "frequency", names(FinalData))
 names(FinalData) <- gsub("-mean", "Mean", names(FinalData))
 names(FinalData) <- gsub("-std", "StdDev", names(FinalData))
 
